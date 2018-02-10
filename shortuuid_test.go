@@ -229,7 +229,7 @@ func BenchmarkUUID(b *testing.B) {
 }
 
 func BenchmarkEncoding(b *testing.B) {
-	u := uuid.NewV4()
+	u := uuid.Must(uuid.NewV4())
 	for i := 0; i < b.N; i++ {
 		DefaultEncoder.Encode(u)
 	}
